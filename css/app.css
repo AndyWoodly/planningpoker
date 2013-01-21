@@ -57,35 +57,12 @@
 	*/
 
 	html, body {
-		background: #2B2B2B;
+		background: #333333;
 		color: #fff;
 		font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;
 	}
 
 	#wrapper {
-		margin: 0 20px;
+		margin: 0;
 	}
-	
-	.demo-intro {
-		margin: 20px 0;
-		font-size: 14px;
-	}
-	
-	.demo-intro h1 {
-		font-weight: bold;
-		font-size: 16px;
-		margin: 0 0 10px 0;
-	}
-	
-	a { color: #ADEAFE; text-decoration: underline; cursor: pointer; }
-	
-	#warning {
-		width: 100%;
-		background: #C70B0F;
-	}
-	
-	#warning p {
-		padding: 10px 20px;
-		text-align: center;
-		font-size: 14px;
-	}
+

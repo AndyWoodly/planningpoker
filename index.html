@@ -6,7 +6,7 @@
 	
 	<meta charset="utf-8">
 
-	<title>Flickable.js / Demo 1</title>
+	<title>Planning Poker Cards</title>
 	
 	<!-- Mobile viewport optimization -->
 	<meta name="viewport" content="initial-scale=1.0">
@@ -20,7 +20,7 @@
 	
 		$(document).ready(function() {
 	
-			$('#demo1').flickable({segments:5});
+			$('#cards').flickable({segments:12});
 			
 			$('.front, .back').tap(function() {
 				var el = $(this).parent();
@@ -36,24 +36,25 @@
 	<style type="text/css">
 	
 	
-	#demo1-wrapper {
+	#cards-wrapper {
 	
 		width: 320px;
 		height: 460px;
 		overflow: hidden;
-		background: #DDDDDD;
+		background: #333333;
 	
 	}
 	
-	#demo1 {
+	#cards {
 		height: 480px;
-		width: 1600px;
+		width: 3840px;
 		-webkit-perspective: 1000;
 	}
 		
 	.card, .front, .back {
 		border-radius: 10px;
-		color: #fff;
+		color: #333333;
+        font-size: 250%;
 		float: left;
 		height: 440px;
 		line-height: 440px;
@@ -65,7 +66,8 @@
 	}
 	
 	.front, .back {
-		background: #fff;
+		background: #fbfbfb;
+        font-size: 100%;
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -74,7 +76,7 @@
 	}
 	
 	.back {
-		color: #fff;
+		color: #747474;
 		-webkit-transform: rotateY(180deg) translate3d(0,0,0);
 	}
 	
@@ -90,14 +92,7 @@
 	.card.flipped {
 		-webkit-animation-name: cardflipped;
 	}
-	
 
-	#card1 .front { color: #000; }	
-	#card2 .front { background: #B00004; }
-	#card3 .front { background: #1C8B00; }
-	#card4 .front { background: #FF9500; }
-	#card5 .front { background: #3A8AD5; }
-	
 	@-webkit-keyframes default { 
 		from 	{ -webkit-transform: rotateY(180deg) translate3d(0,0,0); }
 		to 		{ -webkit-transform: rotateY(0deg) translate3d(0,0,0); }
@@ -117,45 +112,71 @@
 	
 	<section>
 
-		<div id="demo1-wrapper">
+		<div id="cards-wrapper">
 	
-			<div id="demo1" class="clearfix">
-			
-				<!-- Card 1 -->
+			<div id="cards" class="clearfix">
+
 				<div class="card" id="card1">
-					<div class="front">Tap to flip</div>
+					<div class="front">0</div>
 					<div class="back">Tap to flip</div>
 				</div>
 				
-				
-				<!-- Card 2 -->
 				<div class="card" id="card2">
-					<div class="front">Tap to flip</div>
+					<div class="front">0.5</div>
 					<div class="back">Tap to flip</div>
 				</div>
 				
-				
-				<!-- Card 3 -->
 				<div class="card" id="card3">
-					<div class="front">Tap to flip</div>
+					<div class="front">1</div>
 					<div class="back">Tap to flip</div>
 				</div>
-				
-				
-				<!-- Card 4 -->
+
 				<div class="card" id="card4">
-					<div class="front">Tap to flip</div>
+					<div class="front">2</div>
 					<div class="back">Tap to flip</div>
 				</div>
-				
-				
-				<!-- Card 5 -->
+
 				<div class="card" id="card5">
-					<div class="front">Tap to flip</div>
+					<div class="front">3</div>
 					<div class="back">Tap to flip</div>
 				</div>
-			
-			</div>
+
+                <div class="card" id="card6">
+                    <div class="front">5</div>
+                    <div class="back">Tap to flip</div>
+                </div>
+
+                <div class="card" id="card7">
+                    <div class="front">8</div>
+                    <div class="back">Tap to flip</div>
+                </div>
+
+                <div class="card" id="card8">
+                    <div class="front">13</div>
+                    <div class="back">Tap to flip</div>
+                </div>
+
+                <div class="card" id="card9">
+                    <div class="front">20</div>
+                    <div class="back">Tap to flip</div>
+                </div>
+
+                <div class="card" id="card10">
+                    <div class="front">40</div>
+                    <div class="back">Tap to flip</div>
+                </div>
+
+                <div class="card" id="card11">
+                    <div class="front">100</div>
+                    <div class="back">Tap to flip</div>
+                </div>
+
+                <div class="card" id="card12">
+                    <div class="front">?</div>
+                    <div class="back">Tap to flip</div>
+                </div>
+
+            </div>
 			
 		</div>
 	
