@@ -19,14 +19,42 @@
 	<script type="text/javascript">
 	
 		$(document).ready(function() {
-	
-			$('#cards').flickable({segments:12});
+
+            var nrOfCards = 12;
+
+            var height = Math.floor($('#wrapper').height());
+            var width = Math.floor($('#wrapper').width());
+
+            $('#viewport').width(width);
+            $('#viewport').height(height);
+            window.width = width;
+            window.height = height;
+
+            console.log(width, height);
+
+            $('.card').width(width-20);
+            $('.card').height(height-20);
+
+            var $front = $('.front');
+            $front.width(width-20);
+            $front.height(height-20);
+            $front.attr('style', $front.attr('style') + ' ' + 'line-height: '+(height-10)+'px');
+
+            var $back = $('.back');
+            $back.width(width-20);
+            $back.height(height-20);
+            $back.attr('style', $back.attr('style') + ' ' + 'line-height: '+(height-10)+'px');
+
+            $('#cards-wrapper').width(nrOfCards * width);
+            $('#cards-wrapper').height(height);
+
+            $('#cards-wrapper').flickable({segments:nrOfCards});
 			
-			$('.front, .back').tap(function() {
+			$('.front, .back').click(function() {
 				var el = $(this).parent();
 				el.toggleClass('flipped')
 			});
-			
+
 		});
 	
 	</script>
@@ -34,35 +62,51 @@
 	<link rel="stylesheet" href="css/app.css">
 
 	<style type="text/css">
+
+    body {
+        height: 100%;
+        width: 100%;
+    }
 	
-	
-	#cards-wrapper {
-	
-		width: 320px;
-		height: 460px;
+	#wrapper {
+        display:block;
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
 		overflow: hidden;
 		background: #333333;
-	
 	}
-	
-	#cards {
-		height: 480px;
-		width: 3840px;
-		-webkit-perspective: 1000;
+
+    #viewport {
+        display:block;
+        position:absolute;
+        top:0;
+        left:0;
+        overflow: hidden;
+        background: #333333;
+    }
+
+    #cards-wrapper {
+		/*height: 480px;*/
+		/*width: 3840px;*/
+        overflow: hidden;
+		-webkit-perspective: 5000;
 	}
 		
 	.card, .front, .back {
 		border-radius: 10px;
 		color: #333333;
-        font-size: 250%;
+        font-size: 500%;
 		float: left;
-		height: 440px;
-		line-height: 440px;
+		/*height: 440px;*/
+		/*width: 300px;*/
+		/*line-height: 440px;*/
 		margin: 10px;
 		position: relative;
 		padding: 0;
 		text-align: center;
-		width: 300px;
 	}
 	
 	.front, .back {
@@ -76,7 +120,9 @@
 	}
 	
 	.back {
-		color: #747474;
+		/*color: #747474;*/
+        font-size: 300%;
+		color: #d91e4f;
 		-webkit-transform: rotateY(180deg) translate3d(0,0,0);
 	}
 	
@@ -109,81 +155,76 @@
 <body>
 	
 <div id="wrapper">
-	
-	<section>
 
-		<div id="cards-wrapper">
-	
-			<div id="cards" class="clearfix">
+    <div id="viewport">
 
-				<div class="card" id="card1">
-					<div class="front">0</div>
-					<div class="back">Tap to flip</div>
-				</div>
-				
-				<div class="card" id="card2">
-					<div class="front">0.5</div>
-					<div class="back">Tap to flip</div>
-				</div>
-				
-				<div class="card" id="card3">
-					<div class="front">1</div>
-					<div class="back">Tap to flip</div>
-				</div>
+        <div id="cards-wrapper" class="clearfix">
 
-				<div class="card" id="card4">
-					<div class="front">2</div>
-					<div class="back">Tap to flip</div>
-				</div>
-
-				<div class="card" id="card5">
-					<div class="front">3</div>
-					<div class="back">Tap to flip</div>
-				</div>
-
-                <div class="card" id="card6">
-                    <div class="front">5</div>
-                    <div class="back">Tap to flip</div>
-                </div>
-
-                <div class="card" id="card7">
-                    <div class="front">8</div>
-                    <div class="back">Tap to flip</div>
-                </div>
-
-                <div class="card" id="card8">
-                    <div class="front">13</div>
-                    <div class="back">Tap to flip</div>
-                </div>
-
-                <div class="card" id="card9">
-                    <div class="front">20</div>
-                    <div class="back">Tap to flip</div>
-                </div>
-
-                <div class="card" id="card10">
-                    <div class="front">40</div>
-                    <div class="back">Tap to flip</div>
-                </div>
-
-                <div class="card" id="card11">
-                    <div class="front">100</div>
-                    <div class="back">Tap to flip</div>
-                </div>
-
-                <div class="card" id="card12">
-                    <div class="front">?</div>
-                    <div class="back">Tap to flip</div>
-                </div>
-
+            <div class="card" id="card1">
+                <div class="front">0</div>
+                <div class="back">canoo</div>
             </div>
-			
-		</div>
-	
-	</section>
+
+            <div class="card" id="card2">
+                <div class="front">0.5</div>
+                <div class="back">canoo</div>
+            </div>
+
+            <div class="card" id="card3">
+                <div class="front">1</div>
+                <div class="back">canoo</div>
+            </div>
+
+            <div class="card" id="card4">
+                <div class="front">2</div>
+                <div class="back">canoo</div>
+            </div>
+
+            <div class="card" id="card5">
+                <div class="front">3</div>
+                <div class="back">canoo</div>
+            </div>
+
+            <div class="card" id="card6">
+                <div class="front">5</div>
+                <div class="back">canoo</div>
+            </div>
+
+            <div class="card" id="card7">
+                <div class="front">8</div>
+                <div class="back">canoo</div>
+            </div>
+
+            <div class="card" id="card8">
+                <div class="front">13</div>
+                <div class="back">canoo</div>
+            </div>
+
+            <div class="card" id="card9">
+                <div class="front">20</div>
+                <div class="back">canoo</div>
+            </div>
+
+            <div class="card" id="card10">
+                <div class="front">40</div>
+                <div class="back">canoo</div>
+            </div>
+
+            <div class="card" id="card11">
+                <div class="front">100</div>
+                <div class="back">canoo</div>
+            </div>
+
+            <div class="card" id="card12">
+                <div class="front">?</div>
+                <div class="back">canoo</div>
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
 
-	
 </body>
 </html>
